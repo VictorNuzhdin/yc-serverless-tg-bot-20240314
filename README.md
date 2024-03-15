@@ -3,8 +3,9 @@ Creating Serverless Telegram bot. Yandex Cloud Practicum
 <br><br>
 
 
-### Linked repoes : : Связанные репозитории (зеркало)
+### Linked repoes : : Связанные репозитории (основной и зеркало)
 
+* [drvicx/yc-serverless-tg-bot-20240314](https://github.com/drvicx/yc-serverless-tg-bot-20240314)
 * [VictorNuzhdin/yc-serverless-tg-bot-20240314](https://github.com/VictorNuzhdin/yc-serverless-tg-bot-20240314)
 <br><br>
 

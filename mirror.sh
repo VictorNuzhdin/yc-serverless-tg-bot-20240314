@@ -27,7 +27,7 @@ rm -rf $REPO_NAME.git
 git clone --bare $BASE_REPO_HTTPS
 
 
-## MIRRORING_BASE_REPO_TO-TARGET
+## MIRRORING_BASE_REPO_TO_TARGET
 cd $REPO_NAME.git
 git push --mirror $TARGET_REPO_SSH
 
