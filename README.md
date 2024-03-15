@@ -13,6 +13,7 @@ Creating Serverless Telegram bot. Yandex Cloud Practicum
 ### Change log : : История изменений (новые в начале)
 
 ```
+2024-03-15 :: step04 done: создана serverless база данных Yandex Database (YDB) в которую были добавлены тестовые данные с помощью YDB CLI
 2024-03-15 :: step03 done: создана и протестирована 1я serverless функция на языке Python и произведена ее связка с Telegram ботом (получен эхо ответ)
 2024-03-15 :: step02 done: создан сервисный аккаунт с ограниченными правами в облаке (Ролями)
 2024-03-15 :: step01 done: создан Telegram бот, получен токен авторизации
