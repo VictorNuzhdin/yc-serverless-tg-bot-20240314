@@ -1,0 +1,4 @@
+yc_cloud_id = "<YOUR_CLOUD_ID>"
+yc_folder_id = "<YOUR_CLOUD_FOLDER_ID>"
+yc_compute_zone = "<YOUR_CLOUD_DEFAULT_ACCESS_ZONE>"
+yc_token = "<YOUR_CLOUD_AUTH_IAM_TOKEN>"
