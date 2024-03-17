@@ -13,6 +13,7 @@ Creating Serverless Telegram bot. Yandex Cloud Practicum
 ### Change log : : История изменений (новые в начале)
 
 ```
+2024-03-17 :: step06: +FIX: исправил свой косяк: восстановил код функции "first-bot-function" которую я случайно затер кодом для функции для работы с S3 Бакетом "function-for-bucket"
 2024-03-17 :: step09: !BUG: создана новая версия serverless функции которая по замыслу должна выгружать цитаты из YDB в файлы в S3 Object Storage Бакет "bucket-bot-sls242", однако этого НЕ происходит и Бакет остается пустым
 2024-03-16 :: step08: DONE: с помощью Terraform в Yandex Облаке был создан S3 Object Storage Бакет (bucket) с именем "bucket-bot-sls242"
 2024-03-16 :: step00: +FIX: исправлен косяк в профиле Git: была указана вторичная учетка в итоге все коммиты присваивались ей а не учетке "drvicx"

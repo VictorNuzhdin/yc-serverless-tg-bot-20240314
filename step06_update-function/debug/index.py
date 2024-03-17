@@ -6,6 +6,11 @@ import ydb
 import ydb.iam
 import random
 
+# DEBUG: Set timeouts
+DEBUG_TIMEOUT_1 = 15
+DEBUG_TIMEOUT_2 = 10
+DEBUG_TIMEOUT_3 = 5
+
 # Telegram Bot Token
 token = os.getenv('TELEGRAM_BOT_TOKEN')
 
@@ -17,7 +22,10 @@ driver = ydb.Driver(
 )
 
 # Wait for the driver to become active for requests.
-driver.wait(fail_fast=True, timeout=5)
+#driver.wait(fail_fast=True, timeout=5)
+##..DEBUG_1
+driver.wait(fail_fast=True, timeout=DEBUG_TIMEOUT_1)
+
 
 # Create the session pool instance to manage YDB sessions.
 pool = ydb.SessionPool(driver)
@@ -29,11 +37,18 @@ quote_counter = 1
 # The Second problem ...
 def find_max_counter(session):
     # Create the transaction and execute query.
+    #result = session.transaction().execute(
+    #    'SELECT COUNT(*) FROM Quotes;',
+    #    commit_tx=True,
+    #    settings=ydb.BaseRequestSettings().with_timeout(3).with_operation_timeout(2)
+    #)
+    ##..DEBUG_2
     result = session.transaction().execute(
         'SELECT COUNT(*) FROM Quotes;',
         commit_tx=True,
-        settings=ydb.BaseRequestSettings().with_timeout(3).with_operation_timeout(2)
+        settings=ydb.BaseRequestSettings().with_timeout(DEBUG_TIMEOUT_2).with_operation_timeout(DEBUG_TIMEOUT_3)
     )
+
     return result[0].rows[0].column0
 
 
@@ -48,10 +63,16 @@ def get_one_quote(session):
     """ % (quote_counter, quote_counter)
 
     # Create the transaction and execute query.
+    #result = session.transaction().execute(
+    #    yql,
+    #    commit_tx=True,
+    #    settings=ydb.BaseRequestSettings().with_timeout(3).with_operation_timeout(2)
+    #)
+    ##..DEBUG_3
     result = session.transaction().execute(
         yql,
         commit_tx=True,
-        settings=ydb.BaseRequestSettings().with_timeout(3).with_operation_timeout(2)
+        settings=ydb.BaseRequestSettings().with_timeout(DEBUG_TIMEOUT_2).with_operation_timeout(DEBUG_TIMEOUT_3)
     )
 
     quote = "%s %s" % (result[0].rows[0].quote, result[0].rows[0].author)

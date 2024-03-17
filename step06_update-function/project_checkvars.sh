@@ -1,0 +1,25 @@
+#!/bin/bash
+
+
+## Checks ENV variables
+#
+. ~/.bashrc
+clear
+
+echo
+echo --FOR_SERVERLESS_FUNCTION
+echo
+echo "SERVICE_ACCOUNT_DEPLOY_ID = $SERVICE_ACCOUNT_DEPLOY_ID"
+echo "TELEGRAM_BOT_TOKEN        = $TELEGRAM_BOT_TOKEN"
+echo "LOCKBOX_SECRET_ID         = $LOCKBOX_SECRET_ID"
+echo "LOCKBOX_SECRET_VERSION_ID = $LOCKBOX_SECRET_VERSION_ID"
+echo "YDB_ENDPOINT              = $YDB_ENDPOINT"
+echo "YDB_DATABASE              = $YDB_DATABASE"
+echo
+echo
+echo --FOR_S3_OBJECT_STORAGE
+echo
+echo "AWS_ACCESS_KEY_ID         = $AWS_ACCESS_KEY_ID"
+echo "AWS_SECRET_ACCESS_KEY     = $AWS_SECRET_ACCESS_KEY"
+echo "BUCKET_NAME               = $BUCKET_NAME"
+echo
